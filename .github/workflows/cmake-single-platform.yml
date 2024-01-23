@@ -40,6 +40,5 @@ jobs:
         ls;
         mkdir build;
         cd build;
-        cmake ..
-    - name: Build File
-      run: make
+        cmake ..;
+        make
