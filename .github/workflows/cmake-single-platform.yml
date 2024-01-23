@@ -37,6 +37,7 @@ jobs:
 
     - name: Setup Build
       run: |
+        ls
         mkdir build
         cd build
         cmake ..
