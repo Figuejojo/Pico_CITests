@@ -31,6 +31,7 @@ jobs:
         uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'Develop'
   
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
