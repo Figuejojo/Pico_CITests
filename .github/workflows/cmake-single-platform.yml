@@ -14,19 +14,19 @@ env:
 
 jobs: 
   run-linters:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout 
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v3
 
-    - name: Install ClangFormat
-      run: sudo apt-get install -y clang-format
+      - name: Install ClangFormat
+        run: sudo apt-get install -y clang-format
 
-    - name: Run linters
-      uses: wearerequired/lint-action@v2
-      with:
-        clang_format: true
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          clang_format: true
   
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
