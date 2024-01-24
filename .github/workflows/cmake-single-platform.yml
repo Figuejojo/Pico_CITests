@@ -26,16 +26,9 @@ jobs:
 
       - name: CppCheck
         uses: deep5050/cppcheck-action@main
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Publish Report
         uses: mikeal/publish-to-github-action@master
-        output: cppcheck-report.xml
-        #env:
-         # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #BRANCH_NAME: 'Develop'
-        
   
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
