@@ -31,9 +31,10 @@ jobs:
       
       - name: Publish Report
         uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: 'Develop'
+        output: cppcheck-report.xml
+        #env:
+         # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          #BRANCH_NAME: 'Develop'
         
   
   build:
