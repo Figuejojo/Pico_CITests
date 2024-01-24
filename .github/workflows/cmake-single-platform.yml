@@ -21,16 +21,20 @@ jobs:
       packages: write
       
     steps:
-      - name: Checkout 
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install ClangFormat
-        run: sudo apt-get install -y clang-format
-
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
+      - name: CppCheck
+        uses: deep5050/cppcheck-action@main
         with:
-          clang_format: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish Report
+        uses: figuejojo/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: 'Develop'
+        
   
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
