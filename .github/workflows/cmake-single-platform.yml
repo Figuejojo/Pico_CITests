@@ -30,7 +30,7 @@ jobs:
       - name: Publish Report
         uses: mikeal/publish-to-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
   build:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
